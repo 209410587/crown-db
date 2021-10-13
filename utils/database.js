@@ -5,11 +5,26 @@ const isProduction = process.env.NODE_ENV === 'production';
 
 // if project has been deployed, connect with the host's DATABASE_URL
 // else connect with the local DATABASE_URL
-const pool = new Pool({
-  connectionString: isProduction
-    ? process.env.DATABASE_URL
-    : `postgresql://postgres:0000@localhost:5432/crown_87`,
-});
+// const pool = new Pool({
+//   connectionString: isProduction
+//     ? process.env.DATABASE_URL
+//     : `postgresql://postgres:0000@localhost:5432/crown_87`,
+// });
+let pool;
+if (isProduction) {
+  pool = new pool({
+    connectingString: process.env.DATABASE_URL,
+    ssl: { rejectUnauthorized: false },
+  });
+} else {
+  pool = new pool({
+    user: 'postgres',
+    host: 'localhost',
+    database: 'crown_87',
+    password: '0000',
+    port: 5432,
+  });
+}
 
 // const pool = new Pool({
 //   user: 'postgres',
@@ -19,10 +34,10 @@ const pool = new Pool({
 //   port: 5432,
 // });
 
-pool.query('SELECT * FROM category_87', (err, res) => {
-  console.log(JSON.stringify(res.rows));
-  pool.end();
-});
+// pool.query('SELECT * FROM category_87', (err, res) => {
+//   console.log(JSON.stringify(res.rows));
+//   pool.end();
+// });
 
 module.exports = pool;
 
