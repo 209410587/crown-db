@@ -22,7 +22,7 @@ if (isProduction) {
     host: 'localhost',
     database: 'crown_87',
     password: '0000',
-    port: 5432,
+    port: '5432',
   });
 }
 
