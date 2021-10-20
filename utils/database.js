@@ -17,7 +17,7 @@ if (isProduction) {
     ssl: { rejectUnauthorized: false },
   });
 } else {
-  pool = new pool({
+  pool = new Pool({
     user: 'postgres',
     host: 'localhost',
     database: 'crown_87',
