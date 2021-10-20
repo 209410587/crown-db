@@ -12,7 +12,7 @@ const isProduction = process.env.NODE_ENV === 'production';
 // });
 let pool;
 if (isProduction) {
-  pool = new pool({
+  pool = new Pool({
     connectingString: process.env.DATABASE_URL,
     ssl: { rejectUnauthorized: false },
   });
