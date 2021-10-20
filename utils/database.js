@@ -11,6 +11,7 @@ const isProduction = process.env.NODE_ENV === 'production';
 //     : `postgresql://postgres:0000@localhost:5432/crown_87`,
 // });
 let pool;
+
 if (isProduction) {
   pool = new Pool({
     connectingString: process.env.DATABASE_URL,
