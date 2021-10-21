@@ -9,6 +9,7 @@ var usersRouter = require('./routes/users');
 const crown_87_Router = require('./routes/crown_87');
 const crown2_87_Router = require('./routes/crown2_87');
 const api_87_Router = require('./routes/api_87');
+const cors = require('cors');
 
 var app = express();
 
@@ -21,7 +22,6 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
-const cors = require('cors');
 app.use(
   cors({
     origin: '*',
