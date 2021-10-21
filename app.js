@@ -24,16 +24,15 @@ app.use(express.static(path.join(__dirname, 'public')));
 const cors = require('cors');
 app.use(
   cors({
-    origin: ['https://heroku-crown-87.herokuapp.com'],
+    origin: '*',
   })
 );
-app.use('/api_87', cors(), api_87_Router);
 
 app.use('/', indexRouter);
 app.use('/crown_87', crown_87_Router);
 app.use('/crown2_87', crown2_87_Router);
 app.use('/users', usersRouter);
-app.use('/api_87', api_87_Router);
+app.use('/api_87', cors(), api_87_Router);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
