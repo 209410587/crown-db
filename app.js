@@ -21,6 +21,13 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+const cors = require('cors');
+app.use(
+  cors({
+    origin: ['https://heroku-crown-87.herokuapp.com'],
+  })
+);
+app.use('/api_87', cors(), api_87_Router);
 
 app.use('/', indexRouter);
 app.use('/crown_87', crown_87_Router);

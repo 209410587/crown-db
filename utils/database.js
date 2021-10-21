@@ -43,3 +43,11 @@ if (isProduction) {
 module.exports = pool;
 
 // postgres://worufzdpnwpenb:a3209446c7f11dd0412c936a6e5c65b0fed943c785d2d5d5570d9fc0787d5f07@ec2-34-204-128-77.compute-1.amazonaws.com:5432/da9b6ga1i40im7
+
+// => the value of  DATABASE_URL
+// postgres://bquxkrsnhasxxx:eb0e53033ad93186995a9216f1f79592b1541af897ff99dc26ddcec8dceb5xxx@ec2-52-86-123-180.compute-1.amazonaws.com:5432/d8e3pikr4bexxx
+// username: bquxkrsnhasxxx
+// password: eb0e53033ad93186995a9216f1f79592b1541af897ff99dc26ddcec8dceb5xxx
+// host: c2-52-86-123-180.compute-1.amazonaws.com
+// port: 5432
+// database: d8e3pikr4bexxx
